@@ -1,0 +1,847 @@
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  color: #fff;
+  background: #0a192f;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Teko', sans-serif;
+  font-weight: 700;
+  color: #02c002;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section { padding: 60px 0; }
+
+/* ================= HEADER ================= */
+.site-header {
+  background: linear-gradient(90deg, #4dd2fe, #008cff);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.header-logo {
+  height: 100px;
+  border-radius: 12px;
+}
+
+/* Nav */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-list a:hover {
+  color: #004a70;
+  transform: scale(1.1);
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  gap: 5px;
+}
+
+.search-box input {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-box button {
+  background: #02c002;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #004a70 ;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  min-height: 90vh;                /* full viewport height */
+  display: flex;
+  flex-direction: column;          /* stack heading, paragraph, button */
+  align-items: center;             /* center horizontally */
+  justify-content: center;         /* center vertically */
+  text-align: center;              /* center text */
+  padding: 0 20px;
+  /* background: url('/static/media/hero-bg.jpg') center/cover no-repeat;*/
+  
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #02c002;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  background-color: #02c002;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s, transform 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #1e88e5;
+  transform: scale(1.05);
+}
+/* ================= SERVICES GRID + CARDS ================= */
+.grid { display: grid; gap: 20px; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+.card {
+  background: linear-gradient(135deg, #022c43, #004a70);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 192, 2, 0.5); /* green glow on hover */
+  background: linear-gradient(135deg, #004a70, #022c43);
+}
+.card h3{
+  color: #0a84c6
+}
+
+/* ================= INFO / PRICING ================= */
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.info-left, .info-right {
+  background: #02121f;
+  padding: 2rem;
+  border-radius: 16px;
+}
+.text-box{
+  font-size: 12px;
+  font-style: italic;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #004a70;
+}
+
+/* ===== Pricing Card ===== */
+.price-card {/* index price info card */
+  background: linear-gradient(135deg, #022c43, #004a70); /* deep blue gradient */
+  padding: 2rem;
+  border-radius: 20px;
+  max-height: 500px;
+  border: 1px solid #0da0ff;
+  box-shadow: 0 8px 20px rgba(0, 162, 255, 0.3); /* soft blue glow */
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  margin-bottom: 30px;
+}
+
+.price-card:hover , .highlight-price-card:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 192, 2, 0.5); /* green glow on hover */
+  background: linear-gradient(135deg, #004a70, #022c43); /* invert gradient slightly */
+}
+
+.price-card h3, .highlight-price-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  color: #0a84c6; /* neon green title */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.price-card:hover h3{
+  color: #0a84c6
+  
+}
+
+.price-card .price .highlight-price-card {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #02c002;
+}
+
+.price-card ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.price-card li {
+  margin: 0.6 rem 0;
+  padding-left: 2 rem;   /* more space for icon */
+  position: relative;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.price-card li::before {
+  position: left;
+  padding: 0.4rem;
+  left: 0.1rem;        /* center icon in gap */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #02c002;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
+.price-card button {
+  padding: 12px 30px;
+  border: none;
+  background: #02c002; /* neon green button */
+  color: #fff;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.price-card button:hover {
+  background: #1e88e5; /* blue hover effect */
+  transform: scale(1.05);
+}
+
+/* ===== Question Form (Match Contact Form) ===== */
+.question-form {
+  max-width: 600px;          /* same width as contact form */
+  margin: 40px auto;         /* center it */
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(47,128,237,0.4); /* blue shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs and Textarea */
+.question-form input,
+.question-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #2f80ed; /* blue border */
+  background: #0a192f;        /* dark background */
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(47,128,237,0.3);
+  transition: 0.3s;
+}
+
+.question-form input:focus,
+.question-form textarea:focus {
+  border-color: #2f80ed;
+  box-shadow: 0 0 15px rgba(47,128,237,0.7); /* blue glow on focus */
+}
+
+/* Button */
+.question-form button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background: #02c002;  /* green button */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s, transform 0.3s;
+}
+
+.question-form button:hover {
+  background: #008cff;   /* slightly darker green on hover */
+  transform: scale(1.03);
+}
+
+/* ===== Booking SECTION ===== */
+
+.slot,
+.booking-box {
+  max-width: 600px;          /* same width as contact form */
+  margin: 40px auto;         /* center it */
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(47,128,237,0.4); /* blue shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+table {
+  width: 50%;
+  height: 50%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  min-width: 50%;
+}
+
+th {
+  background: #007bff;
+  color: #fff;
+}
+
+td.booked {
+  background: #f8d7da;
+  cursor: not-allowed;
+}
+
+td.selected {
+  background: #28a745;
+  color: #fff;
+}
+
+td.available:hover {
+  background: #cce5ff;
+}
+
+
+.booking-box input,
+.booking-box button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #2f80ed; /* blue border */
+  background: #0a192f;        /* dark background */
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(47,128,237,0.3);
+  transition: 0.3s;
+}
+
+
+.booking-box button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background: #02c002;  /* green button */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s, transform 0.3s;
+}
+
+.booking-box button:hover {
+  background: #008cff;   /* slightly darker green on hover */
+  transform: scale(1.03);
+}
+
+/* ===== SERVICES PRICING SECTION ===== */
+.pricing-section {
+  background: #071426;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: 'Teko', sans-serif;
+}
+
+.section-subtitle {
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.price-card, .highlight-price-card {
+  background: #0a192f;
+  border-radius: 14px;
+  padding: 30px 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+  border: 2px solid #1e293b;
+}
+
+.highlight-price-card{
+  max-width: 900px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 500px;
+}
+
+.price-card:hover , .highlight-price-card:hover{
+  transform: translateY(-10px);
+  border-color: #38bdf8;
+}
+
+.price-card h3, .highlight-price-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2.5rem;
+  color: #02c002;
+  margin-bottom: 20px;
+}
+
+.price-card ul, .highlight-price-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.price-card ul li, .highlight-price-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.price-card .tag, .highlight-price-card .tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #38bdf8;
+}
+
+/* Highlight middle card */
+.price-card.featured, .highlight-price-card.featured {
+  border: 2px solid #38bdf8;
+  transform: scale(1.05);
+}
+/* ================= GALLERY ================= */
+.video-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-card img { width: 100%; display: block; }
+
+.play-btn {
+  position: absolute;
+  font-size: 40px;
+  color: #fff;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Gallery Grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.video-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.video-card img.thumbnail {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Play Button Overlay */
+.video-card .play-btn {
+  position: absolute;
+  font-size: 50px;
+  color: #02c002;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* ===== Video Modal ===== */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex; /* visible when active */
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.modal video {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* Close Button */
+.modal .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal .close:hover {
+  color: #02c002;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ================= PAGINATION ================= */
+.pagination {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 20px;               /* space between buttons */
+  margin: 20px 0 20px 0;   /* 40px top, 20px bottom */
+  padding: 20px;
+}
+
+.page-btn {
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #02c002, #1e88e5);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.page-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+/* ===== Footer ===== */
+.site-footer {
+  background: linear-gradient(90deg, #4dd2fe, #008cff);
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+/* Left Column */
+.footer-left {
+  flex: 1 1 500px; /* grows but min 500px */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left-align content */
+  gap: 15px;
+}
+
+/* Right Column */
+.footer-right {
+  flex: 1 1 500px; /* grows but min 500px */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left-align content */
+  gap: 15px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: linear-gradient(90deg, #4dd2fe, #008cff);
+  color: #fff;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start; /* align columns at top */
+}
+
+/* LEFT COLUMN */
+.footer-left {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-left .footer-logo {
+  width: 150px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-left p,
+.footer-left a {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+.social-bar {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-bar a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-bar a:hover {
+  color: #1e88e5;
+}
+
+/* RIGHT COLUMN */
+.footer-right {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-right h4 {
+  margin-top: 180px;
+  font-size: 1.3rem;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.newsletter-form input {
+  padding: 10px 14px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+  outline: none;
+}
+
+.newsletter-form button {
+  background: #02c002;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #1e88e5;
+}
+
+/* Footer Bottom Links */
+.footer-bottom {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .footer-container,
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-list { flex-direction: column; }
+}
+/* ===== Responsive Hero ===== */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+/* ===== Responsive Footer ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    align-items: center;
+    flex: 1 1 100%;
+  }
+
+  .newsletter-form input {
+    max-width: 100%;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .social-bar {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+  }
+}
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .video-card .play-btn {
+    font-size: 40px;
+  }
+
+  .modal video {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  .modal .close {
+    font-size: 30px;
+    top: 20px;
+    right: 20px;
+  }
+}
