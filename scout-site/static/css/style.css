@@ -315,24 +315,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== Booking SECTION ===== */
+/* ===== Booking split layout ===== */
+.info-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 40px;              /* space between calendar and form */
+  justify-content: center;
+  align-items: center;    /* center horizontally */
+  width: 100%;
+}
+
+#calendar {
+  width: 80%;
+  max-width: 800px;
+}
 
 .slot,
 .booking-box {
-  max-width: 600px;          /* same width as contact form */
-  margin: 40px auto;         /* center it */
-  background: rgba(255,255,255,0.05);
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;              /* center horizontally */
+  background: rgba(255, 255, 255, 0.05);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(47,128,237,0.4); /* blue shadow */
+  box-shadow: 0 0 20px rgba(47, 128, 237, 0.4); /* blue shadow */
   display: flex;
-  flex-direction: column;
+  flex-direction: column;       /* stack elements inside vertically */
   gap: 20px;
-  
 }
 
+/* Table styles */
 table {
-  width: 50%;
-  height: 50%;
+  width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
@@ -364,7 +378,7 @@ td.available:hover {
   background: #cce5ff;
 }
 
-
+/* Booking box input and button */
 .booking-box input,
 .booking-box button {
   width: 100%;
@@ -376,13 +390,11 @@ td.available:hover {
   color: #fff;
   font-size: 1rem;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(47,128,237,0.3);
+  box-shadow: 0 0 0 2px rgba(47, 128, 237, 0.3);
   transition: 0.3s;
 }
 
-
 .booking-box button {
-  width: 100%;
   padding: 14px;
   border-radius: 8px;
   background: #02c002;  /* green button */
@@ -844,4 +856,5 @@ td.available:hover {
     top: 20px;
     right: 20px;
   }
+
 }
