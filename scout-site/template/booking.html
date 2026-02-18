@@ -58,8 +58,7 @@
 
   <section class="booking-section section">
     <div class="info-container">
-
-      <!-- LEFT -->
+      <!-- TOP -->
       <table id="calendar">
         <thead>
           <tr>
@@ -75,18 +74,16 @@
         </thead>
         <tbody id="calendar-body"></tbody>
       </table>
-
-      <!-- RIGHT -->
-      <div class="info-right booking-box">
+    </div>
+    <div class="booking-box">
         <h2>Book a Slot</h2>
         <form id="booking-form">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
+          <input type="location" name="location" placeholder="Event Location" required>
           <input type="text" id="selected-slot" placeholder="Select a slot" readonly>
           <button type="submit">Confirm Booking</button>
         </form>
-      </div>
-
     </div>
   </section>
 
@@ -141,3 +138,5 @@
 
 </body>
 </html>
+
+
