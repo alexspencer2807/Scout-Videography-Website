@@ -54,37 +54,13 @@
 
 <!-- ================= MAIN ================= -->
 <main class="container section">
-  <h1>Book Your Timeslot Today!</h1>
+    <h1>Choose a Timeslot</h1>
+      <!-- LEFT: Calendar -->
+    <div class="info-left container">
+      <div id="cal-inline" style="width:100%; height:1%;"></div>
 
-  <section class="booking-section section">
-    <div class="info-container">
-      <!-- TOP -->
-      <table id="calendar">
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-            <th>Sun</th>
-          </tr>
-        </thead>
-        <tbody id="calendar-body"></tbody>
-      </table>
     </div>
-    <div class="booking-box">
-        <h2>Book a Slot</h2>
-        <form id="booking-form">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="location" name="location" placeholder="Event Location" required>
-          <input type="text" id="selected-slot" placeholder="Select a slot" readonly>
-          <button type="submit">Confirm Booking</button>
-        </form>
-    </div>
+
   </section>
 
   <!-- ================= PAGINATION ================= -->
@@ -138,5 +114,6 @@
 
 </body>
 </html>
+
 
 
