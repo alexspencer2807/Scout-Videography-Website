@@ -318,12 +318,19 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Booking split layout ===== */
 .info-container {
   display: flex;
-  flex-direction: column; /* stack vertically */
-  gap: 40px;              /* space between calendar and form */
+  flex-direction: row;    /* side by side */
+  gap: 40px;              
   justify-content: center;
-  align-items: center;    /* center horizontally */
+  align-items: stretch;   /* stretch children to same height */
   width: 100%;
+  flex-wrap: wrap;         /* stack on smaller screens */
 }
+
+.info-left, .info-right {
+  flex: 1 1 450px;        /* each takes equal space, min 450px */
+  max-width: 100%;
+}
+
 
 #calendar {
   width: 80%;
@@ -410,6 +417,35 @@ td.available:hover {
   background: #008cff;   /* slightly darker green on hover */
   transform: scale(1.03);
 }
+/* Booking Page / Cal.com Button */
+.cal-button {
+  display: inline-block;
+  padding: 14px 30px;
+  background-color: #02c002; /* brand color */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* center horizontally */
+  justify-content: center;
+}
+
+
+.cal-button:hover {
+  background-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.cal-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
 
 /* ===== SERVICES PRICING SECTION ===== */
 .pricing-section {
@@ -840,6 +876,8 @@ td.available:hover {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex-direction: column;
+    align-items: center;
   }
 
   .video-card .play-btn {
@@ -856,5 +894,5 @@ td.available:hover {
     top: 20px;
     right: 20px;
   }
-
 }
+
