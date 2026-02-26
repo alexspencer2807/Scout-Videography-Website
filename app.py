@@ -54,17 +54,15 @@ def contact():
 
 
 
-
 # ---------------- EMAIL FORM ROUTE ---------------- #
+# --- Submit route ---
 @app.route("/submit", methods=["POST"])
 def submit_form():
-    # Common fields
     name = request.form.get("name", "No Name Provided")
     email = request.form.get("email", "No Email Provided")
     message = request.form.get("message", "")
     form_type = request.form.get("form_type", "general")
 
-    # Determine subject and body
     if form_type == "question":
         subject = "New Website Question Submission"
         msg_body = f"Form Type: Question\n\nName: {name}\nEmail: {email}\nMessage:\n{message}"
@@ -84,12 +82,11 @@ def submit_form():
 
     try:
         mail.send(msg)
-        flash("Form submitted successfully!", "success")
+        # Return JSON success for AJAX
+        return jsonify({"status": "success"})
     except Exception as e:
         print("Error sending email:", e)
-        flash("Failed to submit form. Please try again later.", "error")
-
-    return redirect(request.referrer or "/")
+        return jsonify({"status": "error", "message": "Failed to send form."}), 500
 # ---------------- SEARCH ROUTE ---------------- #
 
 MEDIA_FOLDER = os.path.join(app.root_path, "static", "media")

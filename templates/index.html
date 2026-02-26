@@ -11,8 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scout Videography | Home</title>
-
-  <!-- Main CSS -->
+  <link rel="icon" href="{{ url_for('static', filename='media/favicon.ico') }}">  <!-- Main CSS -->
   <link rel="stylesheet" href="/static/css/style.css" />
 </head>
 
@@ -21,7 +20,6 @@
   <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="container header-inner">
-
       <!-- Logo -->
       <a href="/" class="logo">
         <img src="static/media/Scout Videography Logo.jpg" alt="Company Logo" class="header-logo">
@@ -49,17 +47,13 @@
         <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
         <div id="searchResults" class="search-results"></div>
       </div>
-      
-          
-      
-
     </div>
   </header>
 
   <!-- ================= HERO ================= -->
   <section class="hero">
     <h2>We capture stories that move people</h2>
-    <p>Professional videography for events, brands, and creators.</p>
+    <p>Professional videography for sports events, brands, and creators.</p>
     <a class="btn" href="/booking">Booking</a>
   </section>
 
@@ -69,7 +63,10 @@
 
       <!-- LEFT: Pricing -->
       <div class="info-left">
-        <h1>Our Pricing (JMD)</h1 >
+        <h1>Our Pricing (JMD)</h1>
+        <div class="text-box">
+          <p>* Click to see more information on the services page</p>
+        </div>
 
         <div class="price-card" onclick="window.location.href='/services'">
           <h3>Single Game Package</h3>
@@ -85,18 +82,12 @@
           <h3>Premium Package</h3>
           <h1 class="price">$45,000</h1>
         </div>
-        <div class = "text-box">
-          <p>
-            * click to see more information on the services page
-          </p>
-        </div>
       </div>
 
-      <!-- RIGHT: Question Form -->
+      <!-- RIGHT: Question Form & Video -->
       <div class="info-right">
         <h1>Ask Us a Question</h1>
 
-        <!-- Question Form -->
         <div class="form-container">
           <form id="questionForm" class="question-form" method="POST">
             <input type="hidden" name="form_type" value="question">
@@ -104,20 +95,17 @@
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Question" required></textarea>
             <button type="submit">Send Message</button>
-                      <!-- Feedback message will appear here -->
             <div class="form-feedback" id="questionFeedback"></div>
           </form>
         </div>
 
-        <div class="video-card" data-video="/static/media/highlights-aisk-vs-youth-reaching-youth-06022026-scout-videography-2026-02-06.mp4" >
+        <div class="video-card" data-video="/static/media/highlights-aisk-vs-youth-reaching-youth-06022026-scout-videography-2026-02-06.mp4">
           <h1>Real Client Match</h1>
           <img src="/static/media/thumbnail 4.jpg" alt="Video 4 Thumbnail" class="thumbnail">
           <span class="play-btn">▶</span>
         </div>
-        <div class = "text-box">
-          <p>
-            * click to watch a sample video of our work
-          </p>
+        <div class="text-box">
+          <p>* Click to watch a sample video of our work</p>
         </div>
       </div>
     </div>
@@ -127,7 +115,8 @@
   <div class="pagination">
     <a href="/services" class="page-btn">Next →</a>
   </div>
-  <!-- Video Modal -->
+
+  <!-- ================= VIDEO MODAL ================= -->
   <div id="videoModal" class="modal">
     <span class="close">&times;</span>
     <video id="modalVideo" controls>
@@ -136,8 +125,6 @@
     </video>
   </div>
 
-  
-
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="footer-container">
@@ -145,51 +132,26 @@
       <!-- LEFT SIDE -->
       <div class="footer-left">
         <img src="static/media/Scout Videography Logo.jpg" alt="Company Logo" class="footer-logo">
-
-        <p class="footer-text">
-          Thank you for visiting our website. We appreciate your support and look forward to connecting with you.
-        </p>
-
-        <p>Email:
-          <a href="mailto:alexspencer2807@gmail.com">alexspencer2807@gmail.com</a>
-        </p>
-
-        <p>
-          Address: Kingston, St.Andrew,<br>
-          Jamaica, WI
-        </p>
+        <p class="footer-text">Thank you for visiting our website. We appreciate your support and look forward to connecting with you.</p>
+        <p>Email: <a href="mailto:scoutvideography@gmail.com">scoutvideography@gmail.com</a></p>
+        <p>Address: Kingston, St.Andrew,<br>Jamaica, WI</p>
 
         <!-- Social Icons -->
         <div class="social-bar">
-          <a href="https://www.facebook.com/scoutvideoja" target="_blank" rel="noopener">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-
-          <a href="https://www.instagram.com/scoutvideoja" target="_blank" rel="noopener">
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <a href="https://www.tiktok.com/@scoutvideoja" target="_blank" rel="noopener">
-            <i class="fab fa-tiktok"></i>
-          </a>
-
-          <a href="https://www.youtube.com/@scoutvideoja" target="_blank" rel="noopener">
-            <i class="fab fa-youtube"></i>
-          </a>
+          <a href="https://www.facebook.com/scoutvideoja" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/scoutvideoja" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@scoutvideoja" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@scoutvideoja" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
 
       <!-- RIGHT SIDE -->
-       
       <div class="footer-right">
-
         <h4>Connect With Us</h4>
         <p>Subscribe to our newsletter</p>
 
-        <!-- Newsletter Form -->
         <div class="form-container">
           <div class="form-feedback" id="newsletterFeedback"></div>
-
           <form id="newsletterForm" class="newsletter-form" method="POST">
             <input type="hidden" name="form_type" value="newsletter">
             <input type="email" name="email" placeholder="Enter your email" required>
@@ -197,22 +159,39 @@
           </form>
         </div>
 
-
-        <!-- Bottom Links -->
         <div class="footer-bottom">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Accessibility Statement</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Refund Policy</a>
+          <a href="#" class="legal-link" data-legal="privacy">Privacy Policy</a> |
+          <a href="#" class="legal-link" data-legal="accessibility">Accessibility Statement</a> |
+          <a href="#" class="legal-link" data-legal="terms">Terms & Conditions</a> |
+          <a href="#" class="legal-link" data-legal="refund">Refund Policy</a>
         </div>
       </div>
 
     </div>
   </footer>
-  <!-- Javascript-->
+
+  <!-- ================= LEGAL MODAL ================= -->
+  <div id="legalModal" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close">&times;</button>
+      <div id="legalText"></div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
   <script src="/static/js/hamburger.js"></script>
   <script src="/static/js/form_feedback.js"></script>
   <script src="/static/js/video-modal.js"></script>
   <script src="/static/js/search.js"></script>
+  <script src="/static/js/legal.js"></script>
+
+    <!-- ================= LEGAL MODAL ================= -->
+  <div id="legalModal" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close">&times;</button>
+      <div id="legalText"></div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -85,19 +85,18 @@
       <!-- RIGHT: Question Form -->
         <div class="info-right">
             <h1>Contact Us</h1>
-          <!-- Question Form -->
-          <div class="form-container">
-            <!-- Feedback message will appear here -->
-            <div class="form-feedback" id="questionFeedback"></div>
 
-            <form id="questionForm" class="question-form" method="POST">
-              <input type="hidden" name="form_type" value="question">
-              <input type="text" name="name" placeholder="Your Name" required>
-              <input type="email" name="email" placeholder="Your Email" required>
-              <textarea name="message" placeholder="Your Question" required></textarea>
-              <button type="submit">Send Message</button>
-            </form>
-          </div>
+
+        <div class="form-container">
+          <form id="questionForm" class="question-form" method="POST">
+            <input type="hidden" name="form_type" value="question">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Question" required></textarea>
+            <button type="submit">Send Message</button>
+            <div class="form-feedback" id="questionFeedback"></div>
+          </form>
+        </div>
         </div>
       </div>
     </div>
@@ -168,10 +167,10 @@
 
         <!-- Bottom Links -->
         <div class="footer-bottom">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Accessibility Statement</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Refund Policy</a>
+          <a href="#" class="legal-link" data-legal="privacy">Privacy Policy</a> |
+          <a href="#" class="legal-link" data-legal="accessibility">Accessibility Statement</a> |
+          <a href="#" class="legal-link" data-legal="terms">Terms & Conditions</a> |
+          <a href="#" class="legal-link" data-legal="refund">Refund Policy</a>
         </div>
       </div>
 
@@ -180,5 +179,15 @@
   <!-- Hamburger Menu -->
   <script src="/static/js/hamburger.js"></script>
   <script src="/static/js/search.js"></script>
+  <script src="/static/js/legal.js"></script>
+  <script src="/static/js/form_feedback.js"></script>
+
+    <!-- ================= LEGAL MODAL ================= -->
+  <div id="legalModal" class="legal-modal">   
+    <div class="legal-modal-content">
+      <button class="legal-close">&times;</button>
+      <div id="legalText"></div> 
+  </div>
+  </div>
 </body>
 </html>

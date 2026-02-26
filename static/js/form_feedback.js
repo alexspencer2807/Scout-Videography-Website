@@ -1,41 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Helper function for AJAX form submit
   function handleForm(formId, feedbackId) {
     const form = document.getElementById(formId);
     const feedback = document.getElementById(feedbackId);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const formData = new FormData(form);
 
       fetch("/submit", {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: {
+          "Accept": "application/json"  // Tell Flask we want JSON
+        }
       })
-      .then(res => {
-        if (res.ok) {
-          feedback.innerHTML = '<div class="success">Form submitted successfully!</div>';
+      .then(res => res.json()) // parse JSON
+      .then(data => {
+        if (data.status === "success") {
+          feedback.innerHTML = '<div class="flash-message success">Form submitted successfully!</div>';
           form.reset();
         } else {
-          feedback.innerHTML = '<div class="error">Failed to submit form. Please try again.</div>';
+          feedback.innerHTML = '<div class="flash-message error">Failed to submit form. Please try again.</div>';
         }
-
-        setTimeout(() => {
-          feedback.innerHTML = '';
-        }, 4000);
+        setTimeout(() => feedback.innerHTML = '', 4000);
       })
       .catch(() => {
-        feedback.innerHTML = '<div class="error">Failed to submit form. Please try again.</div>';
-        setTimeout(() => {
-          feedback.innerHTML = '';
-        }, 4000);
+        feedback.innerHTML = '<div class="flash-message error">Failed to submit form. Please try again.</div>';
+        setTimeout(() => feedback.innerHTML = '', 4000);
       });
     });
   }
 
   handleForm("questionForm", "questionFeedback");
   handleForm("newsletterForm", "newsletterFeedback");
-
 });

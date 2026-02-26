@@ -140,10 +140,10 @@
 
         <!-- Bottom Links -->
         <div class="footer-bottom">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Accessibility Statement</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Refund Policy</a>
+          <a href="#" class="legal-link" data-legal="privacy">Privacy Policy</a> |
+          <a href="#" class="legal-link" data-legal="accessibility">Accessibility Statement</a> |
+          <a href="#" class="legal-link" data-legal="terms">Terms & Conditions</a> |
+          <a href="#" class="legal-link" data-legal="refund">Refund Policy</a>
         </div>
       </div>
 
@@ -152,5 +152,14 @@
   <script src="/static/js/video-modal.js"></script>
   <script src="/static/js/hamburger.js"></script>
   <script src="/static/js/search.js"></script>
+  <script src="/static/js/legal.js"></script>
+
+    <!-- ================= LEGAL MODAL ================= -->
+  <div id="legalModal" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close">&times;</button>
+      <div id="legalText"></div>
+    </div>
+  </div>
 </body>
 </html>

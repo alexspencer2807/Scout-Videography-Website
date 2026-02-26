@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Scout Videography | Services</title>
+  <link rel="icon" href="{{ url_for('static', filename='media/favicon.ico') }}">
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/static/css/style.css" />
@@ -103,10 +104,14 @@
       <p class="section-subtitle">
         Choose a package that fits your event and budget.
       </p>
+      <div class = "text-box">
+          <p>
+            * click to book now on the gallery page
+          </p>
+      </div>
 
       <div class="pricing-grid">
-
-        <div class="price-card">
+        <div class="price-card" onclick="window.location.href='/booking'">
           <h3>Basic</h3>
           <h1 class="price">$150</h1>
           <ul>
@@ -116,8 +121,8 @@
           </ul>
           <span class="tag">Best for small events</span>
         </div>
-
-        <div class="price-card featured">
+      
+        <div class="price-card" onclick="window.location.href='/booking'">
           <h3>Standard</h3>
           <h1 class="price">$300</h1>
           <ul>
@@ -128,8 +133,8 @@
           </ul>
           <span class="tag">Most Popular</span>
         </div>
-
-        <div class="price-card">
+     
+        <div class="price-card" onclick="window.location.href='/booking'">
           <h3>Premium</h3>
           <h1 class="price">$500</h1>
           <ul>
@@ -141,22 +146,25 @@
           <span class="tag">For large events</span>
         </div>
 
-
-
       </div>
-    </div>
-    <div class="highlight-price-card">
-        <h3>Highlight Reels</h3>
-        <h1 class="price">$700</h1>
-        <ul>
-            <li>A professional editor will create a high-quality highlight reel for your event.
-             The reel is designed to maximize scholarship opportunities by showcasing your best plays in the most compelling way.</li>
-            <li> Clear</li>
-            <li> Concise</li> 
-            <li> Compelling</li> 
-            <li> Delivered within 2 weeks</li>
-        </ul>
       </div>
+      <div class="highlight-price-card" onclick="window.location.href='/booking'">
+          <h3>Highlight Reels</h3>
+          <h1 class="price">$700</h1>
+          <ul>
+              <li>A professional editor will create a high-quality highlight reel for your event.
+              The reel is designed to maximize scholarship opportunities by showcasing your best plays in the most compelling way.</li>
+              <li> Clear</li>
+              <li> Concise</li> 
+              <li> Compelling</li> 
+              <li> Delivered within 2 weeks</li>
+          </ul>
+        </div>
+        <div class = "text-box">
+          <p>
+            * click to schedule a consultation with one of our editors to discuss your highlight reel needs
+          </p>
+        </div>
   </section>
 
 
@@ -227,10 +235,10 @@
 
         <!-- Bottom Links -->
         <div class="footer-bottom">
-          <a href="#">Privacy Policy |</a>
-          <a href="#">Accessibility Statement |</a>
-          <a href="#">Terms & Conditions |</a>
-          <a href="#">Refund Policy </a>
+          <a href="#" class="legal-link" data-legal="privacy">Privacy Policy</a> |
+          <a href="#" class="legal-link" data-legal="accessibility">Accessibility Statement</a> |
+          <a href="#" class="legal-link" data-legal="terms">Terms & Conditions</a> |
+          <a href="#" class="legal-link" data-legal="refund">Refund Policy</a>
         </div>
       </div>
 
@@ -239,5 +247,14 @@
       <!-- Hamburger Menu -->
   <script src="/static/js/hamburger.js"></script>
   <script src="/static/js/search.js"></script>
+  <script src="/static/js/legal.js"></script>
+
+    <!-- ================= LEGAL MODAL ================= -->
+  <div id="legalModal" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close">&times;</button>
+      <div id="legalText"></div>
+    </div>
+  </div>
 </body>
 </html>

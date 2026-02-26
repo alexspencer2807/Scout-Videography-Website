@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero .btn {
-  padding: 14px 30px;
+  padding: 8px 20px;
   font-size: 1.1rem;
   background-color: #02c002;
   color: #fff;
@@ -190,9 +190,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s, transform 0.3s;
+  margin-top: 15px;
 }
 
-.hero .btn:hover {
+.hero .btn:hover{
   background-color: #1e88e5;
   transform: scale(1.05);
 }
@@ -216,7 +217,92 @@ h1, h2, h3, h4, h5, h6 {
 .card h3{
   color: #0a84c6
 }
+/*================= LEgal Modals ==================*/
+/* Full screen overlay */
+.legal-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
 
+/* Main content box */
+.legal-modal-content {
+  color:#1e88e5;
+  background: #ffffff;
+  width: 95%;
+  max-width: 700px;
+  height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.legal-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  
+  width: 44px;
+  height: 44px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 22px;
+  font-weight: bold;
+  
+  background: rgba(255, 255, 255, 0.08);
+  color: #000000;
+  
+  border-radius: 50%;
+  cursor: pointer;
+  
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* Hover effect */
+.legal-close:hover {
+  background: #ff3b3b;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+}
+
+/* Optional active press effect */
+.legal-close:active {
+  transform: scale(0.95);
+}
+/* Typography */
+.legal-modal-content h1 {
+  font-family: 'Teko', sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.legal-modal-content h2 {
+  margin-top: 30px;
+}
+
+.legal-modal-content p {
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
 /* ================= INFO / PRICING ================= */
 .info-container {
   display: grid;
@@ -238,6 +324,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   color: #004a70;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 /* ===== Pricing Card ===== */
@@ -259,6 +347,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 12px 25px #00c00280; /* green glow on hover */
   background: linear-gradient(135deg, #004a70, #022c43); /* invert gradient slightly */
+  cursor: pointer;
 }
 
 .price-card h3, .highlight-price-card h3, .employee-card h3 {
@@ -386,22 +475,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 12px;
 }
 
-.feedback-message {
+.flash-message{
   padding: 10px 15px;
-  border-radius: 6px;
   font-weight: 600;
   font-size: 14px;
   animation: fadeOut 4s forwards;
+  border-radius: 10px;
 }
 
 /* Success style */
-.feedback-message.success {
-  background-color: #64ffda;
+.flash-message.success {
+  background-color: #02c002;
   color: #0a192f;
 }
 
 /* Error style */
-.feedback-message.error {
+.flash-message.error {
   background-color: #ff6b6b;
   color: #fff;
 }
@@ -916,7 +1005,6 @@ main h1 {
 }
 
 /* ================== RESPONSIVE MEDIA QUERIES ================== */
-
 /* Large tablets / small desktops */
 @media (max-width: 1200px) {
   .container {
@@ -965,6 +1053,7 @@ main h1 {
     padding: 10px;
   }
 }
+
 /* Medium devices (tablets) */
 @media (max-width: 992px) {
   
